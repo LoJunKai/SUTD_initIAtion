@@ -1,4 +1,4 @@
-#Image Recognition on Google Street View House Numbers (SVHN) Dataset using Wide Residual Networks (WRNs)
+### Image Recognition on Google Street View House Numbers (SVHN) Dataset using Wide Residual Networks (WRNs)
 
 Problem statement:
 To correctly classify the numbers in SVHN (32x32) Dataset.
