@@ -504,10 +504,10 @@ model.load_weights(checkpoint_path)
 
 # Huh??? why tho?
 
-"""Expected accuracy:"""
+Everything the same except dataset=300000, k=4
+0.9729947756607252, 368s, 24ep, 3reduce
 
 Everything the same except optimizer = adam, lr unset
-
 0.9649277811923787, 138s, 42ep, 3reduced
 
 Batch size: Custom_ReduceLROnPlateau, k=2, dropout=0.0, dataset=200000, lr=0.1, optimizer=SGDm w/o nev, patience=2,4
