@@ -1,7 +1,7 @@
 Image Recognition on Google Street View House Numbers (SVHN) Dataset using Wide Residual Networks (WRNs)
 
 Problem statement:
-To corretly classify the numbers in SVHN (32x32) Dataset.
+To correctly classify the numbers in SVHN (32x32) Dataset.
 
 Dataset source: - Format 2, Cropped Digits
 http://ufldl.stanford.edu/housenumbers/
@@ -20,6 +20,6 @@ Limitations: Computing power
 To further increase the accuracy to reach >98%, as done in the research paper, it is preferable to increase the width of the model to k=8-10, utilise the whole extra dataset images and implement a dropout of 0.4. However, using the free google colaboratory, some compromises on the accuracy had to be made.
 
 Credits:
-https://arxiv.org/pdf/1605.07146v1.pdf - Research paper on WRN
-https://github.com/titu1994/Wide-Residual-Networks/blob/master/wide_residual_network.py - the keras implementation of WRN
+https://arxiv.org/pdf/1605.07146v1.pdf - Research paper on WRN<br>
+https://github.com/titu1994/Wide-Residual-Networks/blob/master/wide_residual_network.py - the keras implementation of WRN<br>
 https://github.com/meliketoy/wide-residual-network - implementation details
