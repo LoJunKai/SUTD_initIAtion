@@ -23,3 +23,20 @@ Credits:
 https://arxiv.org/pdf/1605.07146v1.pdf - Research paper on WRN<br>
 https://github.com/titu1994/Wide-Residual-Networks/blob/master/wide_residual_network.py - the keras implementation of WRN<br>
 https://github.com/meliketoy/wide-residual-network - implementation details
+
+Good Reads:
+
+How to save and load model weights (Callback)<br><br>
+https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/keras/save_and_restore_models.ipynb#scrollTo=xCUREq7WXgvg
+
+Who is best at SVHN<br><br>
+https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#5356484e<br>
+https://benchmarks.ai/svhn<br>
+https://github.com/MatthieuCourbariaux/BinaryConnect - Theano<br>
+https://github.com/Coderx7/SimpleNet - Caffe and Pytorch
+
+Preprocessing hacks<br>
+http://ufldl.stanford.edu/wiki/index.php/Data_Preprocessing
+
+How to boost your accuracy<br>
+https://machinelearningmastery.com/improve-deep-learning-performance/
