@@ -26,10 +26,10 @@ https://github.com/meliketoy/wide-residual-network - implementation details
 
 Good Reads:
 
-How to save and load model weights (Callback)<br><br>
+How to save and load model weights (Callback)<br>
 https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/keras/save_and_restore_models.ipynb#scrollTo=xCUREq7WXgvg
 
-Who is best at SVHN<br><br>
+Who is best at SVHN<br>
 https://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html#5356484e<br>
 https://benchmarks.ai/svhn<br>
 https://github.com/MatthieuCourbariaux/BinaryConnect - Theano<br>
