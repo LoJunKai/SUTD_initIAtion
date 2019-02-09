@@ -12,7 +12,7 @@ Upon deciding on the model, we decided to preprocess the data. As the number 0 w
 Next, although we initially decided to use the Adam optimiser due to its quick convergence, we ultimately decided on the SGD optimiser with momentum as it can converge to a better local minimum. To prevent overfitting, we implemented ReduceLROnPlateau and EarlyStopping, which decreases the learn rate when the val_loss does not improve, and stops training the model if necessary. To capture the best model weights, ModelCheckpoint is used, and weights are loaded when ReduceLROnPlateau is called, reducing the runtime by 6 epochs.
 Overall, many of the methods we tried produced undesirable results. However, with grit and determination, we built on those that were promising, achieving a personal best of 96.8%. Going further, we are certain that the model can still be improved, given greater computational power to utilise the remaining half of the extra dataset, and by introducing data augmentation.
 
-Project Presentation: - Has graphs explaining the best hyperparameters
+Project Presentation: - Has graphs explaining hyperparameters optimisation
 https://sway.office.com/QNYrIkASCjPH90Ib
 
 Final Accuracy: 96.82698217578365 (load model_weights.h5), 45mins to train
