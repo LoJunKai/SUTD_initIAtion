@@ -21,8 +21,8 @@ Credits:<br>
 https://arxiv.org/pdf/1605.07146v1.pdf - Research paper on WRN<br>
 https://github.com/titu1994/Wide-Residual-Networks/blob/master/wide_residual_network.py - the keras implementation of WRN<br>
 https://github.com/meliketoy/wide-residual-network - implementation details
-<br><br><br>
-
+<br>
+<br>
 Good Reads:
 
 How to save and load model weights (Callback)<br>
