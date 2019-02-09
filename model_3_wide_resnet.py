@@ -410,53 +410,6 @@ plt.xlabel('Epoch')
 plt.legend(['train', 'validation'], loc='upper left')
 plt.show()
 
-"""**
-If you rerun the model, would the LR start from the 2reduced or before it happened (when the model was saved), when the model was saved? Conduct a mini experiment with model 1 - it will continue from where the training stopped (after the 2reduced)
-**
-"""
-
-# model died at 0.0001 learn rate:
-died_lr = float(K.get_value(model.optimizer.lr))
-best_model_lr=died_lr*100 # (1/factor)^2
-K.set_value(model.optimizer.lr, best_model_lr)
-
-float(K.get_value(model.optimizer.lr))
-
-# Change the factor to 0.5 and rerun the model
-
-# custom_reducelronplateau = Custom_ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, verbose=1, min_delta=0.0001, min_lr=0)
-custom_reducelronplateau = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, verbose=1, min_delta=0.0001, min_lr=0)
-
-callbacks = [EarlyStopping(monitor='val_loss', patience=4),
-             ModelCheckpoint(filepath=checkpoint_path, monitor='val_loss', save_best_only=True),
-             custom_reducelronplateau]
-
-model_log = model.fit_generator(train_generator, 
-                        validation_data=valid_generator, 
-                        steps_per_epoch=len(train_generator), 
-                        validation_steps=len(valid_generator), 
-                        epochs=100,
-                        verbose=2,
-                        callbacks=callbacks)
-
-# Plot graphs
-
-plt.plot(model_log.history['acc'])
-plt.plot(model_log.history['val_acc'])
-plt.title('Accuracy (Higher Better)')
-plt.ylabel('Accuracy')
-plt.xlabel('Epoch')
-plt.legend(['train', 'validation'], loc='upper left')
-plt.show()
-
-plt.plot(model_log.history['loss'])
-plt.plot(model_log.history['val_loss'])
-plt.title('Loss (Lower Better)')
-plt.ylabel('Loss')
-plt.xlabel('Epoch')
-plt.legend(['train', 'validation'], loc='upper left')
-plt.show()
-
 # Testing
 
 from sklearn.metrics import accuracy_score
@@ -495,14 +448,7 @@ test_preds_class = np.argmax(test_preds,axis=1)
 print("Test set accuracy score:", accuracy_score(test_labels_index, test_preds_class))
 
 
-
 '''
-
-# Before -0.9661186232329441, 0.9648125384142594
-model.load_weights(checkpoint_path)
-# After -0.9658497234173326, 0.9660417947141979
-
-# Huh??? why tho?
 
 Everything the same except dataset=300000, k=4
 0.9729947756607252, 368s, 24ep, 3reduce
@@ -538,6 +484,20 @@ revived with patience=2,4, factor=0.5: 0.9658497234173326, 123s, 34ep, 4reduced,
 # Reviving the model yields no results
 # First run of w/o custom can't seem to be replicated sadly
 # custom reduces the number of ep
+
+"""
+Code for reviving the model:
+If you rerun the model, would the LR start from the 2reduced or before it happened (when the model was saved), when the model was saved? Conduct a mini experiment with model 1 - it will continue from where the training stopped (after the 2reduced)
+
+# model died at 0.0001 learn rate:
+died_lr = float(K.get_value(model.optimizer.lr))
+best_model_lr=died_lr*100 # (1/factor)^2
+K.set_value(model.optimizer.lr, best_model_lr)
+
+float(K.get_value(model.optimizer.lr))
+
+# Change the factor of RLROP to 0.5 and rerun the model
+"""
 
 # batchsize: k=2, dropout=0.0, dataset=200000, lr=0.1, optimizer=SGDm w/o nev, patience=2,4
 
